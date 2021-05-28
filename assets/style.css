@@ -1,0 +1,42 @@
+* {
+background-color:rgb(4, 36, 124);
+}
+
+#wrapper {
+    position:absolute;
+    left: 30%;
+    top: 20%;
+    width: 500px;
+    height: 500px;
+
+}
+#startBtn {
+   
+    background-color: rgb(238, 20, 227);
+    margin-left: 20%;
+    padding: 25px 50px;
+    font-size: 35px;
+    color: white;
+    
+
+}
+#timer {
+    float: left;
+    color: white;
+    
+}
+
+#questions{
+    margin: 30px;
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+ p {
+color:white;
+text-align: center;
+ }
+
