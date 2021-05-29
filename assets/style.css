@@ -4,10 +4,11 @@ background-color:rgb(4, 36, 124);
 
 #wrapper {
     position:absolute;
-    left: 30%;
-    top: 20%;
+    left: 50%;
+    top: 50%;
     width: 500px;
     height: 500px;
+    transform: translate(-50%,-50%);
 
 }
 #startBtn {
@@ -19,6 +20,10 @@ background-color:rgb(4, 36, 124);
     color: white;
     
 
+}
+
+button {
+    border-radius: 8px;
 }
 #timer {
     float: left;
