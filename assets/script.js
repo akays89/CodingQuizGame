@@ -1,3 +1,35 @@
+// array of questions
+var questionArr = [
+    {
+        title:"What will print to the console from this statement?: console.log('Hi!'.length)",
+        choices: ["Hi!", "3", "1", "Hi!.length"],
+        answer: "3"
+    },
+
+   
+    {
+        title: " HTML stands for ___ ___ ___ ",
+        choices: ["HyperText Markdown Language", "HyperTransfer Markup Language","HyperText Markup Language", "HyperTransfer Markdown Language" ],
+        answer: "HyperText Markup Language"
+    }, 
+    {
+        title: "Which symbol is required to target an id element in CSS?",
+        choices: ["#", "*", ".", "/"], 
+        answer: "#"
+    }, 
+    {
+        title: "Which of the following is not a coding language?", 
+        choices: ["Javascript", "goat yoga", "Jquery", "HTML/CSS"],
+        answer: "goat yoga"
+    }, 
+    {
+        title: "Strings are enclosed in ___",
+        choices: ["parenthesis", "curly brackets", "a circle", "quotation marks"],
+        answer: "quotation marks"
+    }
+] 
+
+
 //starts score to 0
 var score = 0
 //starts at the first question on index
@@ -7,6 +39,7 @@ var questionIndex=0;
 var timer = document.querySelector('#timer');
 var startBtn = document.querySelector('#startBtn');
 var questionsDiv = document.querySelector('#questions');
+var wrapper = document.querySelector('#wrapper')
 
 //start time
 var timeRemaining = 60;
@@ -83,48 +116,61 @@ function checkAnswer(event) {
         }
 
     }
+
+    //to move to the next question
+    questionIndex++;
+
+    //ensures that once all questions have been rendered, the game ends
+    if (questionIndex >= questionArr.length) {
+        finish(); 
+        newDiv.textContent ="You got " + score + "/" + questionArr.length + " correct!";
+    } else {
+        //renders next question
+        render(questionIndex); 
+    }
+    //appends new div to questionsdiv
+    questionsDiv.appendChild(newDiv); 
+    }
+    
+    function finish() {
+        //clears values
+        questionsDiv.innerHTML = "";
+        timeRemaining.innerHTML = "";
+    
+    //dynamically creates h1 tag with an id of create H1
+    var createH1 = document.createElement("h1");
+    createH1.setAttribute("id", "createH1");
+    createH1.textContent = "Game Over!"
+    
+     //appends "All Done" to the page
+     questionsDiv.appendChild(createH1);
+    
+     //creates a paragraph tag with id createP
+      var createP = document.createElement("p");
+      createP.setAttribute("id", "createP");
+    
+    //appends new paragraph tag
+      questionsDiv.appendChild(createP);
+    
+    
+    if (timeRemaining >= 0) {
+        //if time left on timer, assigns value to remaining
+        var remainingTime =timeRemaining; 
+        //creates new paragraph element
+        var createP2 =document.createElement("p");
+        //clears timer counting
+        clearInterval(holdInterval); 
+        //renders final score to page
+        createP.textContent ="Your score is: " + remainingTime; 
+        //appends new paragraph tag to questionsDiv
+        questionsDiv.appendChild(createP2); 
+    }
 }
 
+ 
 
 
 
 
 
 
-
-
-
-
-
-
-
-// array of questions
-var questionArr = [
-    {
-        title:"What will print to the console from this statement?: console.log('Hi!'.length)",
-        choices: ["Hi!", "3", "1", "Hi!.length"],
-        answer: "3"
-    },
-
-   
-    {
-        title: " HTML stands for ___ ___ ___ ",
-        choices: ["HyperText Markdown Language", "HyperTransfer Markup Language","HyperText Markup Language", "HyperTransfer Markdown Language" ],
-        answer: "HyperText Markup Language"
-    }, 
-    {
-        title: "Which symbol is required to target an id element in CSS?",
-        choices: ["#", "*", ".", "/"], 
-        answer: "#"
-    }, 
-    {
-        title: "Which of the following is not a coding language?", 
-        choices: ["Javascript", "goat yoga", "Jquery", "HTML/CSS"],
-        answer: "goat yoga"
-    }, 
-    {
-        title: "Strings are enclosed in ___",
-        choices: ["parenthesis", "curly brackets", "a circle", "quotation marks"],
-        answer: "quotation marks"
-    }
-] 
