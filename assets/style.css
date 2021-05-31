@@ -33,15 +33,33 @@ button {
 
 #questions{
     margin: 30px;
+    color: white;
 
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(238, 20, 227);
 }
  p {
 color:white;
 text-align: center;
  }
+
+ li {
+    background-color:rgb(238, 20, 227);
+    margin-top: 15px;
+    padding: 8px 15px;
+    width: 80%;
+    font-size: 20px;
+    color: white;
+}
+
+#newDiv{
+    color: white;
+    border-top: 5px solid white;
+   
+
+    
+}
 
