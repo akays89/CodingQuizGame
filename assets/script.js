@@ -165,12 +165,72 @@ function checkAnswer(event) {
         //appends new paragraph tag to questionsDiv
         questionsDiv.appendChild(createP2); 
     }
+
+    //create new element
+var getInitials =document.createElement("label"); 
+//gives element an id of initials
+getInitials.setAttribute("id", "getInitials");
+//assigns text content to getInitials 
+getInitials.textContent = "Enter your initials"; 
+questionsDiv.appendChild(getInitials); 
+
+//creates an input element
+var initialInput =document.createElement("input"); 
+//sets input type to text
+initialInput.setAttribute("type", "text"); 
+//gives var an id of initials
+initialInput.setAttribute("id", "initials"); 
+//sets initials to be an empty string
+initialInput.textContent=""; 
+//appends input to div
+questionsDiv.appendChild(initialInput); 
+
+var submitBtn =document.createElement("button"); 
+//sets button type to be submit
+submitBtn.setAttribute("type", "submit"); 
+//asigns id value of submit
+submitBtn.setAttribute("id", "submit"); 
+//button text
+submitBtn.textContent ="Submit"; 
+//appends button to div
+questionsDiv.appendChild(submitBtn); 
+
+submitBtn.addEventListener("click", function () {
+//assigns initials to a variable
+    var initials=initialInput.value; 
+
+//ensures initials not blank
+if (initials===null) {
+    alert("No value entered"); 
+} else {
+    //stores score with initials in var
+    var finalScore = {
+        initials: initials, 
+        score: remainingTime
+    }
+//retrieves all scores from localstorage
+    var allScores =localStorage.getItem("allScores");
+    
+    //if empty, then the allscores val is an empty array(not null)
+    if (allScores===null) {
+        allScores=[]; 
+    } else {
+        //parses from JSON values
+        allScores =JSON.parse(allScores); 
+    }
+    //pushes finalscore values to array
+   allScores.push(finalScore);  
+    //var parses scores into JSON
+   var JSONScores=JSON.stringify(allScores); 
+//sets stringified values into localstorage
+localStorage.setItem("allScores", JSONScores); 
+//moves window to highscores page
+window.location.replace("./highScores.html"); 
+
 }
 
- 
 
+});
 
-
-
-
+}
 

@@ -25,6 +25,11 @@ background-color:rgb(4, 36, 124);
 button {
     border-radius: 8px;
 }
+
+textarea{
+    width: 90%;
+    margin: 20px;
+}
 #timer {
     float: left;
     color: white;
@@ -53,6 +58,7 @@ text-align: center;
     width: 80%;
     font-size: 20px;
     color: white;
+    align-items: center;
 }
 
 #newDiv{
@@ -62,4 +68,60 @@ text-align: center;
 
     
 }
+
+#submit {
+    background-color: rgb(238, 20, 227);
+    margin-left: 33%;
+    padding: 15px 32px;
+    font-size: 20px;
+    color: white;
+}
+
+
+#reset{
+    background-color:rgb(238, 20, 227);
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 50%;
+    left: 40%;
+    text-align: center;
+}
+
+#goBack {
+    background-color: rgb(238, 20, 227);
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    left: 40%;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid lightgray;
+    background-color: white;
+    color: rgb(238, 20, 227);
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+#questions {
+    text-align: center;
+}
+
+
+}
+
+    
+
+
+
+    
 
